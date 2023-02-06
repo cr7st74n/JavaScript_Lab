@@ -17,7 +17,7 @@ student_count.innerHTML = countOfStu;
 
 btn_add.addEventListener("click", () => {
   if (
-    input_name.value === "" ||
+    input_name.value === "" || input_name.value > 50 ||
     input_id.value == "" ||
     input_gpa.value == "" ||
     input_gpa.value > 4 ||
@@ -34,6 +34,9 @@ btn_add.addEventListener("click", () => {
       " ,GPA: " +
       input_gpa.value;
     list.appendChild(newStudent);
+    newStudent.addEventListener("click", () => {
+        SelectLi(newStudent);
+    });
     //add to the count of students
     countOfStu++;
     student_count.innerHTML = countOfStu;
@@ -43,15 +46,17 @@ btn_add.addEventListener("click", () => {
   }
 
     // Create the variable elemnt to selected and add the class.
-    let elements = document.querySelectorAll("li");
+    // let elements = document.querySelectorAll("li");
 
-    elements.forEach(function (button) {
-        button.addEventListener("click", () => {
-            SelectLi(button);
-        });
-    });
+    // elements.forEach(element => {
+
+    // });
 
 });
+
+
+
+
 
 function SelectLi(li) {
     li.classList.toggle("selected");
