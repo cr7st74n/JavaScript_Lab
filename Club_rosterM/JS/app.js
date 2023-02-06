@@ -29,6 +29,9 @@ btn_add.addEventListener("click", ()=>{
         //add to the count of students
         countOfStu++;
         student_count.innerHTML = countOfStu;
+        input_name.value = "";
+        input_gpa.value = "";
+        input_id.value = "";
      }
 })
 
