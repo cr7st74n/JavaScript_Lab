@@ -45,17 +45,7 @@ btn_add.addEventListener("click", () => {
     input_id.value = ""; 
   }
 
-    // Create the variable elemnt to selected and add the class.
-    // let elements = document.querySelectorAll("li");
-
-    // elements.forEach(element => {
-
-    // });
-
 });
-
-
-
 
 
 function SelectLi(li) {
@@ -64,5 +54,9 @@ function SelectLi(li) {
 
 
 delete_btn.addEventListener("click", () => {
-  document.querySelectorAll(".selected").remove();
+  const element = document.getElementsByClassName("selected");
+  console.log(element);
+  for( var i = 0;i < element.length; i++){
+    element[i].parentNode.removeChild(element[i]);
+  }
 });
