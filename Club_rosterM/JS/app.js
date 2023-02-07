@@ -55,8 +55,11 @@ function SelectLi(li) {
 
 delete_btn.addEventListener("click", () => {
   const element = document.getElementsByClassName("selected");
-  console.log(element);
-  for( var i = 0;i < element.length; i++){
+  console.log( list.attributes);
+  for( var i = 0;i <= list.attributes.length; i++){
     element[i].parentNode.removeChild(element[i]);
+    countOfStu--;
+    student_count.innerHTML = countOfStu
   }
+
 });
